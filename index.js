@@ -239,6 +239,8 @@ database.ref("/outcomes/").on("value", function (snapshot) {
 })
 
 //compare player picks, adjust stats and switch back to turn 1 
+
+//MAKE THIS LESS REPETITIVE WHEN I FEEL LIKE IT (COMBINE PLAYER 1 WINS AND LOSSES INTO ONE CONDITIONAL)
 function checkResult() {
 
   if (playerOne.pick === "Rock") {
@@ -257,8 +259,6 @@ function checkResult() {
       database.ref().child("/players/playerTwo/draws").set(playerTwo.draws + 1);
     }
   } else if (playerOne.pick === "Paper") {
-
-
     if (playerTwo.pick === "Rock") {
 
       database.ref().child("/outcomes/").set(playerOne.name + " wins!");
