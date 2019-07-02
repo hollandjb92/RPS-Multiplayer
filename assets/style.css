@@ -6,6 +6,7 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: "Helvetica", Arial, sans-serif;
 }
 
 
@@ -16,4 +17,70 @@ body {
 
 .jumbotron h1 {
   font-weight: bold;
+}
+
+#chat {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.chatText:nth-child(odd) {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+#enterName {
+  position: relative;
+  bottom: 50px;
+  margin-bottom: 20px;
+}
+
+.option img {
+  width: 15%;
+  margin-top: 5px;
+
+}
+
+.option:hover {
+  transform: scale(1.2);
+  -webkit-filter: brightness(150%);
+}
+
+.option:active {
+  transform: scale(1.0);
+
+}
+
+#playerOneName,
+#playerTwoName {
+  font-weight: 700;
+}
+
+.playerStats {
+  font-size: 1.5rem;
+}
+
+#waitingForOpponent {
+  font-weight: 500;
+}
+
+#chatSubmit {
+  position: relative;
+  float: right;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: #17a2b8;
+}
+
+#chatInput {
+  background-color: #f1f1f1;
+}
+
+#result {
+  font-weight: 700;
 }

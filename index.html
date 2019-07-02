@@ -15,7 +15,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
 
     <div class="jumbotron">
       <h1>Rock, Paper Scissors - Online!</h1>
@@ -23,8 +23,8 @@
     </div>
 
 
-    <div class="enterName">
-      <form id="nameForm">
+    <div id="enterName">
+      <form id="nameForm" class="text-center">
         <input type="text" id="playerName" placeholder="Enter Your Name">
         <input type="submit" id="submitName">
       </form>
@@ -35,69 +35,75 @@
       <div class="row">
         <div class="col-4">
 
-          <div class="card player" id="playerOne">
+          <div class="card bg-info text-center player" id="playerOne">
             <div class="card-header">
               <h2 id="playerOneName"></h2>
             </div>
             <div class="card-body">
-              <div class="option">Rock</div>
-              <div class="option">Paper</div>
-              <div class="option">Scissors</div>
+              <div class="option"><img src="./assets/Rock.png" alt="Rock"></div>
+              <div class="option"><img src="./assets/Paper.png" alt="Paper"></div>
+              <div class="option"><img src="./assets/Scissors.png" alt="Scissors" "></div>
             </div>
-            <div class="card-footer">
-              <div class="playerStats" id="playerOneStats"></div>
+            <div class=" card-footer">
+                <div class="playerStats" id="playerOneStats"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-4">
+            <div class="card  bg-info text-center" id="gameBox">
+              <h3 class="card-title" id="waitingForOpponent"></h3>
+              <div id="resultImages"></div>
+              <h3 class="card-title" id="result"></h3>
             </div>
           </div>
 
-        </div>
+          <div class="col-4">
 
-        <div class="col-4">
-          <div class="card" id="gameBox">
-            <h3 class="card-title" id="waitingForOpponent">...</h3>
-            <h3 class="card-title" id="result">Rock, Paper, Scissors</h3>
-          </div>
-        </div>
-
-        <div class="col-4">
-
-          <div class="card player" id="playerTwo">
-            <div class="card-header">
-              <h2 id="playerTwoName"></h2>
+            <div class="card bg-info player text-center" id="playerTwo">
+              <div class="card-header">
+                <h2 id="playerTwoName"></h2>
+              </div>
+              <div class="card-body">
+                <div class="option"><img src="./assets/Rock.png" alt="Rock"></div>
+                <div class="option"><img src="./assets/Paper.png" alt="Paper"></div>
+                <div class="option"><img src="./assets/Scissors.png" alt="Scissors" "></div>
             </div>
-            <div class="card-body">
-              <div class="option">Rock</div>
-              <div class="option">Paper</div>
-              <div class="option">Scissors</div>
+            <div class=" card-footer">
+                  <div class="playerStats" id="playerTwoStats"></div>
+                </div>
+              </div>
+
             </div>
-            <div class="card-footer">
-              <div class="playerStats" id="playerTwoStats"></div>
-            </div>
-          </div>
-
-        </div>
 
 
 
-        </<div>
+            </<div>
 
     </section>
 
 
     <div class="row">
+
       <div class="col-8">
-        <div id="chat">
+        <div id="chat" class="mt-4">
 
         </div>
       </div>
-
       <div class="col-4">
         <div class="message">
-          <form action="" id="chatForm">
-            <textarea id="chatInput" type="text" rows="8" cols="45"></textarea>
+          <form action="" id="chatForm" class="mt-4">
+            <textarea id="chatInput" type="text" rows="8" cols="58"></textarea>
             <input type="submit" id="chatSubmit">
           </form>
         </div>
       </div>
+
+
+
+
+
     </div>
 
 
