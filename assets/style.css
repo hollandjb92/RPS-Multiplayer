@@ -1,0 +1,19 @@
+body {
+  background: url(./background.jpg) no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.jumbotron {
+  text-align: center;
+  background: none;
+}
+
+.jumbotron h1 {
+  font-weight: bold;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RPS Multiplayer</title>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1>Rock, Paper Scissors - Online!</h1>
+      <h3>Enter Your Name to Find an Opponent!</h2>
+    </div>
+
+
+    <div class="enterName">
+      <form id="nameForm">
+        <input type="text" id="playerName" placeholder="Enter Your Name">
+        <input type="submit" id="submitName">
+      </form>
+    </div>
+
+
+    <section id="Game">
+      <div class="row">
+        <div class="col-4">
+
+          <div class="card player" id="playerOne">
+            <div class="card-header">
+              <h2 id="playerOneName"></h2>
+            </div>
+            <div class="card-body">
+              <div class="option">Rock</div>
+              <div class="option">Paper</div>
+              <div class="option">Scissors</div>
+            </div>
+            <div class="card-footer">
+              <div class="playerStats" id="playerOneStats"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-4">
+          <div class="card" id="gameBox">
+            <h3 class="card-title" id="waitingForOpponent">...</h3>
+            <h3 class="card-title" id="result">Rock, Paper, Scissors</h3>
+          </div>
+        </div>
+
+        <div class="col-4">
+
+          <div class="card player" id="playerTwo">
+            <div class="card-header">
+              <h2 id="playerTwoName"></h2>
+            </div>
+            <div class="card-body">
+              <div class="option">Rock</div>
+              <div class="option">Paper</div>
+              <div class="option">Scissors</div>
+            </div>
+            <div class="card-footer">
+              <div class="playerStats" id="playerTwoStats"></div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        </<div>
+
+    </section>
+
+
+    <div class="row">
+      <div class="col-8">
+        <div id="chat">
+
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="message">
+          <form action="" id="chatForm">
+            <textarea id="chatInput" type="text" rows="8" cols="45"></textarea>
+            <input type="submit" id="chatSubmit">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
