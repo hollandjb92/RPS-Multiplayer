@@ -89,7 +89,7 @@ $(".option").on("click", function (event) {
   if (playerOne && playerTwo && (thisPlayer === playerOne.name) && turn === 1) {
     let playerChoice = $(this).text().trim();
 
-    database.ref().child("/players/playerOne/choice").set(playerChoice);
+    database.ref().child("/players/playerOne/pick").set(playerChoice);
 
     turn = 2;
     database.ref().child("/turn").set(2);
@@ -102,7 +102,7 @@ $(".option").on("click", function (event) {
   if (playerOne && playerTwo && (thisPlayer === playerTwo.name) && turn === 2) {
     let playerChoice = $(this).text().trim();
 
-    database.ref().child("/players/playerTwo/choice").set(playerChoice);
+    database.ref().child("/players/playerTwo/pick").set(playerChoice);
 
 
     checkResult();
@@ -206,47 +206,47 @@ database.ref("/outcomes/").on("value", function (snapshot) {
 
 
 function checkResult() {
-  if (playerOne.choice === "Rock") {
-    if (playerTwo.choice === "Paper") {
+  if (playerOne.pick === "Rock") {
+    if (playerTwo.pick === "Paper") {
       database.ref().child("/outcomes/").set("Paper wins!");
       database.ref().child("/players/playerOne/losses").set(playerOne.losses + 1);
       database.ref().child("/players/playerTwo/wins").set(playerTwo.wins + 1);
-    } else if (playerTwo.choice === "Scissors") {
+    } else if (playerTwo.pick === "Scissors") {
       database.ref().child("/outcomes/").set("Rock wins!");
       database.ref().child("/players/playerOne/wins").set(playerOne.win + 1);
       database.ref().child("/players/playerTwo/losses").set(playerTwo.loss + 1);
-    } else if (playerTwo.choice === "Rock") {
+    } else if (playerTwo.pick === "Rock") {
       database.ref().child("/outcomes/").set("Draw!");
       database.ref().child("/players/playerOne/draws").set(playerOne.draws + 1);
       database.ref().child("/players/playerTwo/draws").set(playerTwo.draws + 1);
     }
-  } else if (playerOne.choice === "Paper") {
-    if (playerTwo.choice === "Rock") {
+  } else if (playerOne.pick === "Paper") {
+    if (playerTwo.pick === "Rock") {
 
       database.ref().child("/outcomes/").set("Paper wins!");
       database.ref().child("/players/playerOne/wins").set(playerOne.win + 1);
       database.ref().child("/players/playerTwo/losses").set(playerTwo.loss + 1);
-    } else if (player2.choice === "Paper") {
+    } else if (player2.pick === "Paper") {
       database.ref().child("/outcomes/").set("Draw!");
       database.ref().child("/players/playerOne/draws").set(playerOne.draws + 1);
       database.ref().child("/players/playerTwo/draws").set(playerTwo.draws + 1);
-    } else if (player2.choice === "Scissors") {
+    } else if (player2.pick === "Scissors") {
       database.ref().child("/outcomes/").set("Scissors win!");
       database.ref().child("/players/playerOne/losses").set(playerOne.loss + 1);
       database.ref().child("/players/playerTwo/wins").set(playerTwo.win + 1);
     }
-  } else if (playerOne.choice === "Scissors") {
-    if (playerTwo.choice === "Rock") {
+  } else if (playerOne.pick === "Scissors") {
+    if (playerTwo.pick === "Rock") {
 
       database.ref().child("/outcomes/").set("Rock wins!");
       database.ref().child("/players/playerOne/losses").set(playerOne.loss + 1);
       database.ref().child("/players/playerTwo/wins").set(playerTwo.win + 1);
-    } else if (player2.choice === "Paper") {
+    } else if (player2.pick === "Paper") {
 
       database.ref().child("/outcomes/").set("Scissors win!");
       database.ref().child("/players/playerOne/wins").set(playerOne.win + 1);
       database.ref().child("/players/playerTwo/losses").set(playerTwo.loss + 1);
-    } else if (playerTwo.choice === "Scissors") {
+    } else if (playerTwo.pick === "Scissors") {
 
       database.ref().child("/outcomes/").set("Draw!");
       database.ref().child("/players/playerOne/draws").set(player1.draws + 1);
