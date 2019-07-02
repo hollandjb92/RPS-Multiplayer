@@ -188,14 +188,14 @@ database.ref("/turn/").on("value", function (snapshot) {
 
     if (playerOne && playerTwo) {
 
-      $("#waitingForOpponent").html("Waiting on " + playerOneName + "to make their move")
+      $("#waitingForOpponent").html("Waiting for " + playerOneName + " to make their move")
     }
 
   } else if (snapshot.val() == 2) {
     turn = 2;
 
     if (playerOne && playerTwo) {
-      $("#waitingForOpponent").html("Waiting on " + playerTwoName + "to make their move")
+      $("#waitingForOpponent").html("Waiting for " + playerTwoName + " to make their move")
     }
   }
 });
@@ -208,11 +208,11 @@ database.ref("/outcomes/").on("value", function (snapshot) {
 function checkResult() {
   if (playerOne.pick === "Rock") {
     if (playerTwo.pick === "Paper") {
-      database.ref().child("/outcomes/").set("Paper wins!");
+      database.ref().child("/outcomes/").set(playerTwo.name + " wins!");
       database.ref().child("/players/playerOne/losses").set(playerOne.losses + 1);
       database.ref().child("/players/playerTwo/wins").set(playerTwo.wins + 1);
     } else if (playerTwo.pick === "Scissors") {
-      database.ref().child("/outcomes/").set("Rock wins!");
+      database.ref().child("/outcomes/").set(playerOne.name + " wins!");
       database.ref().child("/players/playerOne/wins").set(playerOne.wins + 1);
       database.ref().child("/players/playerTwo/losses").set(playerTwo.losses + 1);
     } else if (playerTwo.pick === "Rock") {
@@ -223,7 +223,7 @@ function checkResult() {
   } else if (playerOne.pick === "Paper") {
     if (playerTwo.pick === "Rock") {
 
-      database.ref().child("/outcomes/").set("Paper wins!");
+      database.ref().child("/outcomes/").set(playerOne.name + " wins!");
       database.ref().child("/players/playerOne/wins").set(playerOne.wins + 1);
       database.ref().child("/players/playerTwo/losses").set(playerTwo.losses + 1);
     } else if (player2.pick === "Paper") {
@@ -231,19 +231,19 @@ function checkResult() {
       database.ref().child("/players/playerOne/draws").set(playerOne.draws + 1);
       database.ref().child("/players/playerTwo/draws").set(playerTwo.draws + 1);
     } else if (player2.pick === "Scissors") {
-      database.ref().child("/outcomes/").set("Scissors win!");
+      database.ref().child("/outcomes/").set(playerTwo.name + " win!");
       database.ref().child("/players/playerOne/losses").set(playerOne.losses + 1);
       database.ref().child("/players/playerTwo/wins").set(playerTwo.wins + 1);
     }
   } else if (playerOne.pick === "Scissors") {
     if (playerTwo.pick === "Rock") {
 
-      database.ref().child("/outcomes/").set("Rock wins!");
+      database.ref().child("/outcomes/").set(playerTwo.name + " wins!");
       database.ref().child("/players/playerOne/losses").set(playerOne.losses + 1);
       database.ref().child("/players/playerTwo/wins").set(playerTwo.wins + 1);
     } else if (player2.pick === "Paper") {
 
-      database.ref().child("/outcomes/").set("Scissors win!");
+      database.ref().child("/outcomes/").set(playerOne.name + " win!");
       database.ref().child("/players/playerOne/wins").set(playerOne.wins + 1);
       database.ref().child("/players/playerTwo/losses").set(playerTwo.losses + 1);
     } else if (playerTwo.pick === "Scissors") {
